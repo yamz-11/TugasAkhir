@@ -1,0 +1,47 @@
+<resources>
+    //String halaman Login
+    <string name="app_name">Tiket Bus</string>
+    <string name="logo1">logo</string>
+    <string name="lWelcome">TikBus Apps</string>
+    <string name="lEmail">Email</string>
+    <string name="lPassword">Password</string>
+    <string name="lSign">SIGN-IN</string>
+    <string name="lTodo">New to Todo app?</string>
+    <string name="lRegister">Register</string>
+    //String halaman register
+    <string name="logo2">logo</string>
+    <string name="rNama">Nama</string>
+    <string name="rMsknama">Masukkan Nama</string>
+    <string name="rEmail">Email</string>
+    <string name="rMskemail">Masukkan Email</string>
+    <string name="rPassword">Password</string>
+    <string name="rPass">Masukkan Password</string>
+    <string name="rRepas">Re-Password</string>
+    <string name="rMskrepas">Masukkan Password Ulang</string>
+    <string name="rRegister">Register</string>
+    //String Halaman Home
+    <string name="hwelcom">WELCOME</string>
+    <string name="htask">Task</string>
+    <string name="hTask">Masukkan Task</string>
+    <string name="hJenis">Jenis Task</string>
+    <string name="hMskjenis">Masukkan Jenis Task</string>
+    <string name="hTime">Time Task</string>
+    <string name="hMsktime">Masukkan Lama Task</string>
+    <string name="htambah">Tambahkan</string>
+    <string name="logout">Logout</string>
+    <string name="twelcom">WELCOME</string>
+    <string name="Nama">nama</string>
+    <string name="hasiltask">Hasil Task</string>
+    <string name="hasiltime">Hasil Time</string>
+    <string name="hasiljenis">Hasil Jenis</string>
+    //String Halaman Pesan Tiket
+    <string name="nNIK">NIK</string>
+    <string name="hNIK">Masukkan NIK</string>
+    <string name="nalamat">Alamat</string>
+    <string name="halamat">Masukkan Alamat</string>
+    <string name="ntlp">No Telepon</string>
+    <string name="htlp">Masukkan No Telepon</string>
+    <string name="njnsk">Jenis Kelamin</string>
+    <string name="hjnsk">Masukkan Jenis Kelamin</string>
+
+</resources>
