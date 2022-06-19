@@ -65,20 +65,19 @@
         android:text="Pesan Tiket" />
 
     <Button
-        android:id="@+id/button3"
-        android:layout_width="308dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:onClick="Hargatiket"
-        android:text="Harga Tiket" />
-
-    <Button
         android:id="@+id/button4"
         android:layout_width="308dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:onClick="Riwayattiket"
         android:text="History" />
+    <Button
+        android:id="@+id/btnkeluar"
+        android:layout_width="308dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:onClick="BtnKeluarApps"
+        android:text="Keluar" />
 
 
 </LinearLayout>

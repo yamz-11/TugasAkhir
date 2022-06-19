@@ -2,14 +2,15 @@ package com.example.tugasakhir.model;
 
 public class PesanModel {
 
-    private String id,nama, nik, alamat, jenisKelamin, Asal, Tujuan, Harga;
+    private String id,nama, nik, alamat, jenisKelamin, Asal, Nokursi, Tujuan, Harga;
 
-    public PesanModel(String nama, String nik, String alamat, String jenisKelamin, String asal, String tujuan, String harga) {
+    public PesanModel(String nama, String nik, String alamat, String jenisKelamin, String asal, String nokursi, String tujuan, String harga) {
         this.nama = nama;
         this.nik = nik;
         this.alamat = alamat;
         this.jenisKelamin = jenisKelamin;
         Asal = asal;
+        Nokursi = nokursi;
         Tujuan = tujuan;
         Harga = harga;
     }
@@ -62,6 +63,13 @@ public class PesanModel {
         Asal = asal;
     }
 
+    public String getNokursi() {
+        return Nokursi;
+    }
+
+    public void setNokursi(String nokursi) {
+        Nokursi = nokursi;
+    }
     public String getTujuan() {
         return Tujuan;
     }

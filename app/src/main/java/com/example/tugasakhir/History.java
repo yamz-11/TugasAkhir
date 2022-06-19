@@ -44,9 +44,9 @@ public class History extends AppCompatActivity {
         setContentView(R.layout.activity_history);
 
         tambah = findViewById(R.id.btnTambah);
-        recyclerView = findViewById(R.id.daftarPesanan);
+        recyclerView = findViewById(R.id.datapembeli);
 
-        // Penggunan Diaglong Loading
+        // Penggunaan Dialog Loading
         progressDialog = new ProgressDialog(History.this);
         progressDialog.setTitle("Loading");
         progressDialog.setMessage("Mengambil data...");
@@ -80,6 +80,7 @@ public class History extends AppCompatActivity {
                                 lihat.putExtra("alamat", list.get(pos).getAlamat());
                                 lihat.putExtra("jenis kelamin", list.get(pos).getJenisKelamin());
                                 lihat.putExtra("asal", list.get(pos).getAsal());
+                                lihat.putExtra("nokursi", list.get(pos).getNokursi());
                                 lihat.putExtra("tujuan", list.get(pos).getTujuan());
                                 lihat.putExtra("harga", list.get(pos).getHarga());
                                 startActivity(lihat);
@@ -97,6 +98,7 @@ public class History extends AppCompatActivity {
                                 intent.putExtra("alamat", list.get(pos).getAlamat());
                                 intent.putExtra("jenis kelamin", list.get(pos).getJenisKelamin());
                                 intent.putExtra("asal", list.get(pos).getAsal());
+                                intent.putExtra("nokursi",list.get(pos).getNokursi());
                                 intent.putExtra("tujuan",list.get(pos).getTujuan());
                                 startActivity(intent);
                         }
@@ -105,7 +107,7 @@ public class History extends AppCompatActivity {
                 dialog.show();
             }
         });
-
+        //Untuk mengambil data dari adapter
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         RecyclerView.ItemDecoration decoration = new DividerItemDecoration(getApplicationContext(), DividerItemDecoration.VERTICAL);
         recyclerView.setLayoutManager(layoutManager);
@@ -132,13 +134,15 @@ public class History extends AppCompatActivity {
                     }
                 });
     }
-
+    //menampilkan data dihalaman pertama
     @Override
     protected void onStart(){
         super.onStart();
         getData();
     }
 
+
+   //Mengambil Data Dari Firebase
     private void getData() {
         progressDialog.show();
 
@@ -153,7 +157,7 @@ public class History extends AppCompatActivity {
                         if(task.isSuccessful()){
                             for (QueryDocumentSnapshot document : task.getResult()){
                                 PesanModel pesanModel = new PesanModel(document.getString("nama"), document.getString("nik"),
-                                        document.getString("alamat"), document.getString("jenis kelamin"), document.getString("asal"), document.getString("tujuan"),
+                                        document.getString("alamat"), document.getString("jenis kelamin"), document.getString("asal"),document.getString("nokursi"), document.getString("tujuan"),
                                         document.getString("harga"));
                                 pesanModel.setId(document.getId());
                                 list.add(pesanModel);

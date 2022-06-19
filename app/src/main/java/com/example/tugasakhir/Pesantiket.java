@@ -22,7 +22,7 @@ import java.util.Map;
 
 public class Pesantiket extends AppCompatActivity {
 
-    private EditText nama,nik,alamat,jenisKelamin,asal,tujuan;
+    private EditText nama,nik,alamat,jenisKelamin,asal,tujuan,nokursi;
     private Button pesan;
 
     private String sTujuan;
@@ -46,6 +46,7 @@ public class Pesantiket extends AppCompatActivity {
         alamat = findViewById(R.id.Alamat);
         jenisKelamin = findViewById(R.id.jenisKelamin);
         asal = findViewById(R.id.Asal);
+        nokursi = findViewById(R.id.noKursi);
         tujuan = findViewById(R.id.Tujuan);
         pesan = findViewById(R.id.btnPesan);
 
@@ -60,23 +61,24 @@ public class Pesantiket extends AppCompatActivity {
                 sTujuan = tujuan.getText().toString();
 
                 if(nama.getText().length() > 0 || nik.getText().length() > 0 || alamat.getText().length() > 0 ||
-                jenisKelamin.getText().length() > 0 || asal.getText().length() > 0 || tujuan.getText().length() > 0){
+                jenisKelamin.getText().length() > 0 || asal.getText().length() > 0 || nokursi.getText().length() > 0 ||
+                        tujuan.getText().length() > 0){
 
-                    if(sTujuan.equals("NTB") || sTujuan.equals("ntb")){
-                        iHarga = 500000;
+                    if(sTujuan.equals("Yogyakarta") || sTujuan.equals("jogja") || sTujuan.equals("yogya")){
+                        iHarga = 550000;
                     }
                     else if(sTujuan.equals("Bali") || sTujuan.equals("bali")){
                         iHarga =  300000;
                     }
                     else if (sTujuan.equals("Jakarta") || sTujuan.equals("jakarta")){
-                        iHarga = 350000;
+                        iHarga = 750000;
                     }
 
                     /*Convert int to String*/
                     harga = String.valueOf(iHarga);
 
                     createData(nama.getText().toString(), nik.getText().toString(), alamat.getText().toString(), jenisKelamin.getText().toString(),
-                            asal.getText().toString(), sTujuan, harga);
+                            asal.getText().toString(),nokursi.getText().toString(), sTujuan, harga);
 
                 }
                 else {
@@ -94,12 +96,14 @@ public class Pesantiket extends AppCompatActivity {
             alamat.setText(intent.getStringExtra("alamat"));
             jenisKelamin.setText(intent.getStringExtra("jenis kelamin"));
             asal.setText(intent.getStringExtra("asal"));
+            nokursi.setText(intent.getStringExtra("nokursi"));
             tujuan.setText(intent.getStringExtra("tujuan"));
+
         }
 
     }
 
-    private void createData(String nama, String nik, String alamat, String jenisKL, String asal, String sTujuan, String harga) {
+    private void createData(String nama, String nik, String alamat, String jenisKL, String asal, String nokursi, String sTujuan, String harga) {
         Map<String,Object> tiket = new HashMap<>();
 
         tiket.put("nama", nama);
@@ -107,6 +111,7 @@ public class Pesantiket extends AppCompatActivity {
         tiket.put("alamat", alamat);
         tiket.put("jenis kelamin", jenisKL);
         tiket.put("asal", asal);
+        tiket.put("nokursi",nokursi);
         tiket.put("tujuan", sTujuan);
         tiket.put("harga", harga);
 

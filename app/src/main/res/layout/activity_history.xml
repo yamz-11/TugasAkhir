@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/daftarPesanan"
+            android:id="@+id/datapembeli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/btnTambah"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
+        android:layout_width="234dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="120dp"
         android:text="Tambah Pesanan"
         app:layout_constraintBottom_toBottomOf="parent"

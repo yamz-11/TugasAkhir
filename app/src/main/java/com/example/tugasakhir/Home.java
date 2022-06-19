@@ -17,19 +17,17 @@ public class Home extends AppCompatActivity {
         Intent i = new Intent(this, CekTiket.class);
         startActivity(i);
     }
-
     public void Pesantiket(View v) {
         Intent i = new Intent(this, Pesantiket.class);
         startActivity(i);
     }
 
-    public void Hargatiket(View v) {
-        Intent i = new Intent(this, CekHarga.class);
-        startActivity(i);
-    }
-
     public void Riwayattiket(View v) {
         Intent i = new Intent(this, History.class);
+        startActivity(i);
+    }
+    public void BtnKeluarApps(View v){
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
     }
 }
